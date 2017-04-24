@@ -43,7 +43,6 @@ class PromotionDiscount
   end
 end
 
-=begin # an implementation of products model as its own class
 class Products
   attr_reader :current
   def initialize(*args)
@@ -58,7 +57,7 @@ class Products
       }
   end
 end
-=end
+
 
 class Checkout
   attr_accessor :products, :scanned, :promotional_rules
