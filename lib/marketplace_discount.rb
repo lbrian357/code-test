@@ -14,7 +14,7 @@ class PromotionDiscount
     # three_for_two_tshirts discount
     total_discount += 19.95 if three_for_two_tshirts?
 
-    # overall discounts should be applied after per item price reduction
+    # overall discounts should be applied after this line ( per item price reduction )
     after_per_price_discount_total = total - total_discount
     
     #over60  discount
@@ -42,23 +42,6 @@ class PromotionDiscount
     true if rules.include?('three_for_two_tshirts') && items.count('003') > 2
   end
 end
-
-=begin # an implementation of products model as its own class
-class Products
-  attr_reader :current
-  def initialize(*args)
-    @current ||= args
-  end
-  
-  def current
-      {
-        '001' => { 'name' => 'Lavender heart', 'price' => 9.25 },
-        '002' => { 'name' => 'Personalised cufflinks', 'price' => 45.00 },
-        '003' => { 'name' => 'Kids T-shirt', 'price' => 19.95 } 
-      }
-  end
-end
-=end
 
 class Checkout
   attr_accessor :products, :scanned, :promotional_rules
@@ -93,3 +76,22 @@ class Checkout
     end
   end
 end
+
+
+
+=begin # an implementation of products model as its own class
+class Products
+  attr_reader :current
+  def initialize(args)
+    @current ||= args
+  end
+  
+  def current
+      {
+        '001' => { 'name' => 'Lavender heart', 'price' => 9.25 },
+        '002' => { 'name' => 'Personalised cufflinks', 'price' => 45.00 },
+        '003' => { 'name' => 'Kids T-shirt', 'price' => 19.95 } 
+      }
+  end
+end
+=end

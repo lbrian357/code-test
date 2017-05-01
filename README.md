@@ -1,3 +1,7 @@
+# Running tests
+Uses rspec
+bundle install and run rspec
+
 # Candidate Tests
 
 Potential candidate tests for developers we interview or don't...
